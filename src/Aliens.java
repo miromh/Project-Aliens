@@ -19,7 +19,7 @@ public class Aliens {
 			} while (testsNumber < 1 || testsNumber > 40);
 			// number of tests *
 
-			int testCount = 1;
+			byte testCount = 1;
 			for (int i = 0; i < testsNumber; i++) {
 				System.out.println();
 				System.out.println("- Test number " + testCount + " -");
