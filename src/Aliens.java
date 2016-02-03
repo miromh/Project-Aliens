@@ -5,7 +5,6 @@ public class Aliens {
 
 	public static void main(String[] args) {
 		welcomeMsg();
-
 		Scanner input = new Scanner(System.in);
 
 		byte choise = 1;
@@ -25,35 +24,40 @@ public class Aliens {
 				System.out.println();
 				System.out.println("- Test number " + testCount + " -");
 
+				// word
 				String word = "";
 				do {
 					System.out.print("Enter word (min 2 symbols): ");
 					word = input.next().toLowerCase();
-
 				} while (word.length() < 2);
+				// end of word
 
+				// text
 				String text;
 				do {
 					System.out.print("Enter text: ");
 					text = input.next().toLowerCase();
+				} while (word.length() >= text.length() && text.length() < 10000);
+				// end of text
 
-				} while (word.length() >= text.length());
-
+				// print positions
 				System.out.println("Test result: ");
 				System.out.println(wordPosition(word, text));
 				int index = text.indexOf(word);
-
 				while (index != -1) {
 					System.out.print(index + " ");
 					index = text.indexOf(word, index + 1);
 				}
+				// end of print positions
+
 				System.out.println();
 				testCount++;
-
 			}
+			// * continue or exit
 			continueOrExit();
 			choise = input.nextByte();
 		} while (choise != 0);
+		// *
 		endMsg();
 	}
 
@@ -70,7 +74,7 @@ public class Aliens {
 		return count;
 	}
 
-	/////// Messages ////
+	/////// Messages //////
 	public static void welcomeMsg() {
 		System.out.println("            -");
 		System.out.println("  -    - -     - -   -  ");
