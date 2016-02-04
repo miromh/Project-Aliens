@@ -25,18 +25,18 @@ public class Aliens {
 				System.out.println("- Test number " + testCount + " -");
 
 				// * word
-				String word = "";
+				String word;
+				System.out.println("Enter word (min 2 symbols): ");
 				do {
-					System.out.print("Enter word (min 2 symbols): ");
-					word = input.next().toLowerCase();
+					word = input.nextLine().toLowerCase().replaceAll("\\s", "");
 				} while (word.length() < 2);
 				// word *
 
 				// * text
 				String text;
+				System.out.print("Enter text: ");
 				do {
-					System.out.print("Enter text: ");
-					text = input.next().toLowerCase();
+					text = input.nextLine().toLowerCase().replaceAll("\\s", "");
 				} while (word.length() >= text.length() && text.length() < 10000);
 				// text *
 
@@ -49,7 +49,6 @@ public class Aliens {
 					index = text.indexOf(word, index + 1);
 				}
 				// print test results *
-
 				System.out.println();
 				testCount++;
 			}
@@ -60,9 +59,9 @@ public class Aliens {
 		// continue or exit *
 		endMsg();
 	}
-	// END OF ALIENS *
-	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+	// END OF ALIENS *
+	//
 	///////// Word Count /////////
 	public static int wordPosition(String word, String text) {
 		int index = text.indexOf(word);
@@ -84,7 +83,6 @@ public class Aliens {
 	}
 
 	public static void continueOrExit() {
-
 		System.out.print("To continue press \"1\" or \"0\" for exit: ");
 	}
 
@@ -95,5 +93,4 @@ public class Aliens {
 		System.out.println("      -           -     ");
 		System.out.println("      |           |");
 	}
-
 }
