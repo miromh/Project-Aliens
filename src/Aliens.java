@@ -1,11 +1,12 @@
-
 import java.util.Scanner;
 
 public class Aliens {
+	private static Scanner input;
+
 	// * ALIENS
 	public static void main(String[] args) {
 		welcomeMsg();
-		Scanner input = new Scanner(System.in);
+		input = new Scanner(System.in);
 
 		byte choise = 1;
 		do {
@@ -60,8 +61,7 @@ public class Aliens {
 		endMsg();
 	}
 
-	// END OF ALIENS *
-	//
+	// ALIENS *
 	///////// Word Count /////////
 	public static int wordPosition(String word, String text) {
 		int index = text.indexOf(word);
@@ -87,6 +87,7 @@ public class Aliens {
 	}
 
 	public static void endMsg() {
+		System.out.println();
 		System.out.println("      |           |");
 		System.out.println("      -           -     ");
 		System.out.println("     Have a nice day !");
